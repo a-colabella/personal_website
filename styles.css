@@ -1,0 +1,42 @@
+body {
+    font-family: "Montserrat", sans-serif;
+
+}
+
+#menus {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#titlebar {
+    width: 100%;
+    padding-left: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+#my-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-items {
+    float: left;
+    display: inline;
+    margin-right: 2px;
+    margin-left: 2px;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-top: 1px solid gray;
+    color: gray;
+    cursor: pointer;
+}
+
+.menu-items:hover{
+    color: black;
+    border-top: 3px solid black;
+
+}
