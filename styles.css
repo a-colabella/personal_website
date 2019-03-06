@@ -1,42 +1,33 @@
 body {
-    font-family: "Montserrat", sans-serif;
-
+    font-family: "Cantarell", sans-serif;
 }
 
-#menus {
+#headbar {
     width: 100%;
-    margin-top: 10px;
+    margin: 0;
 }
 
 #titlebar {
     width: 100%;
-    padding-left: 2px;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
 }
 
-#my-menu {
+#sidebar {
+    width: 20%;
+    font-size: 20px;
+}
+
+#sidebar ul {
     list-style-type: none;
-    padding: 0;
 }
 
-.menu-items {
-    float: left;
-    display: inline;
-    margin-right: 2px;
-    margin-left: 2px;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-top: 1px solid gray;
-    color: gray;
+#sidebar ul li {
+    padding-bottom: 20px;
     cursor: pointer;
 }
 
-.menu-items:hover{
-    color: black;
-    border-top: 3px solid black;
-
-}
