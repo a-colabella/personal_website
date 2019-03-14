@@ -19,11 +19,9 @@ $(document).ready(function() {
 * from the sidebar.
 */
 function showPanel(name, element) {
-    console.log(name);
-    console.log(element);
     $(".panel-link").removeClass("activePanel");
     $(".major-panel").hide();
-    $(name).show();
+    $(name).fadeToggle(800, "swing");
 
     if (name != "#home") {
 	element.addClass("activePanel");
