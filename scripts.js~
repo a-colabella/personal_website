@@ -1,7 +1,0 @@
-console.log("test");
-
-$('.side-items').click(function(e){
-    e.preventDefault();
-    console.log("side-item");
-    //$(this).toggleClass('activePanel');
-});
