@@ -1,7 +1,9 @@
 function buildPhotos() {
-    console.log("build photos");
-    
-
+    var image_list;
+    $.getJSON("./images.json", function(data) {
+	image_list = data;
+	console.log(image_list);
+    });
 }
 
 /**

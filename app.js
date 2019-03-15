@@ -1,46 +1,29 @@
-/*
-const http = require('http');
-const fs = require('fs');
+var express = require('express');
+var fs = require('fs');
+var app = express();
 
-const imageDir = "./images/";
-var my_images = [];
-
-const server = http.createServer((req, res) => {
-    if (req.url === "/") {
-	fs.readFile("./public/index.html", function (error, pgRes) {
-	    if (error) {
-		res.writeHead(404);
-		res.write("Contents not found!");
-	    } else {
-		res.writeHead(200, { 'Content-Type': 'text/html' });
-		res.write(pgRes);
-	    }
-
-	    res.end();
-	});
-    } else {
-	res.writeHead(200, { 'Content-Type': 'text/html' });
-	res.end();
-    }
-
-});
-
-server.listen(3000);
-console.log("listening on port 3000");
+var imageDir = "./images/";
+var my_images = { images: [] };
 
 function readImages() {
     fs.readdir(imageDir, (err, files) => {
 	files.forEach(file => {
 	    if (!file.includes("_color")) {
-		my_images.push(file);
-		console.log(file);
+		my_images.images.push(file);
 	    }
 	});
+
+	writeImages();
     });
 }
-*/
-var express = require('express');
-var app = express();
+
+function writeImages() {
+    var json = JSON.stringify(my_images);
+    fs.writeFile("public/images.json", json, "utf8");
+}
+
+readImages();
+
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
