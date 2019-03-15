@@ -12,7 +12,7 @@ body {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     color: black;
 }
@@ -20,7 +20,7 @@ body {
 #sidebar {
     width: 20%;
     display: inline-block;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 #sidebar ul {
@@ -57,5 +57,5 @@ a {
     display: inline-block;
     background-color: grey;
     vertical-align: top;
-    margin-top: 18px;
+    margin-top: 14opx;
 }

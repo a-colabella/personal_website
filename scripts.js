@@ -1,18 +1,22 @@
-/*
-* When the document is ready, create the following 
-* event handlers.
-*/
-$(document).ready(function() {
-    showPanel("#home", $("#billboard"));
+function buildPhotos() {
+    console.log("build photos");
     
-    $(".panel-link").on("click", function() {
-	showPanel($(this).attr("href"), $(this));
-    });
 
-    $("#billboard").on("click", function() {
-	showPanel($(this).attr("href"), $(this));
-    });
-});
+}
+
+/**
+* This function builds all components of the panel
+* and populates it with content.
+*/
+function buildPanel(name) {
+    switch(name) {
+    case "#photos":
+	buildPhotos();
+	break;
+    default:
+	// do nothing, there is no default panel
+    }
+}
 
 /**
 * This function displays the panel selected
@@ -26,4 +30,22 @@ function showPanel(name, element) {
     if (name != "#home") {
 	element.addClass("activePanel");
     }
+
+    buildPanel(name);
 }
+
+/*
+* When the document is ready, create the following 
+* event handlers.
+*/
+$(document).ready(function() {
+    showPanel("#home", $("#billboard"));
+    
+    $(".panel-link").on("click", function() {
+	showPanel($(this).children("a").attr("href"), $(this));
+    });
+
+    $("#billboard").on("click", function() {
+	showPanel($(this).attr("href"), $(this));
+    });
+});
