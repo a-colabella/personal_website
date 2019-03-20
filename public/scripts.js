@@ -20,8 +20,8 @@ function buildPhotos() {
 function animatePhotos() {
     var photos = $(".my-photos");
     var i = 0;
-    var id = setInterval(frame, 100);
-
+    var id = setInterval(frame, 25);
+    
     photos.hide();
 
     function frame() {
@@ -32,7 +32,6 @@ function animatePhotos() {
 	    i++;
 	}
     }
-
 }
 
 /**

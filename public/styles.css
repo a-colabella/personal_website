@@ -66,10 +66,20 @@ a {
     -moz-column-count:    2;
     -moz-column-gap:      0px;
     column-count:         2;
-    column-gap:           0px;
+    row-gap:           0px;
 }
 
 .my-photos {
     width: 100% !important;
     height: auto !important;
+    cursor: pointer;
+}
+
+.my-photos:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
