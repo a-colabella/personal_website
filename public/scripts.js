@@ -2,18 +2,47 @@ function buildPhotos() {
     var image_list;
     $.getJSON("./images.json", function(data) {
 	image_list = data;
-	console.log(image_list);
+
+	for (image in image_list["images"]) {
+	    var tile = document.createElement("img");
+	    tile.setAttribute("src", image_list["images"][image]);
+	    tile.style.height = "50%";
+	    tile.style.width = "50%";
+	    
+	    $("#photos").append(tile);
+	}
+	
+	$("#photos img").addClass("my-photos");
+	$(".my-photos").hide();
     });
+}
+
+function animatePhotos() {
+    var photos = $(".my-photos");
+    var i = 0;
+    var id = setInterval(frame, 100);
+
+    photos.hide();
+
+    function frame() {
+	if (i == photos.length) {
+	    clearInterval(id);
+	} else {
+	    $(photos[i]).fadeToggle(800, "swing");
+	    i++;
+	}
+    }
+
 }
 
 /**
 * This function builds all components of the panel
 * and populates it with content.
 */
-function buildPanel(name) {
+function panelGo(name) {
     switch(name) {
     case "#photos":
-	buildPhotos();
+	animatePhotos();
 	break;
     default:
 	// do nothing, there is no default panel
@@ -33,12 +62,12 @@ function showPanel(name, element) {
 	element.addClass("activePanel");
     }
 
-    buildPanel(name);
+    panelGo(name);
 }
 
 /*
 * When the document is ready, create the following 
-* event handlers.
+* event handlers and execute the following functions.
 */
 $(document).ready(function() {
     showPanel("#home", $("#billboard"));
@@ -50,4 +79,6 @@ $(document).ready(function() {
     $("#billboard").on("click", function() {
 	showPanel($(this).attr("href"), $(this));
     });
+
+    buildPhotos();
 });
