@@ -45,11 +45,15 @@ a {
     cursor: pointer;
 }
 
+#rightbar .side-items {
+    padding-left: 10px;
+}
+
 .side-items li a:hover {
     font-weight: bold;
 }
 
-.panel-link {
+.panel-link, .filter-link {
     padding-left: 5%;
     padding-right: 5%;
     margin-right: 17%;
