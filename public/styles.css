@@ -10,25 +10,33 @@ body {
 #titlebar {
     width: 100%;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     font-size: 35px;
     font-weight: bold;
     color: black;
 }
 
-#sidebar, #rightbar {
+#sidebar {
     width: 20%;
+    float: left;
     display: inline-block;
     font-size: 14px;
 }
 
-#sidebar ul {
+#rightbar {
+    width: 20%;
+    float: right;
+    display: inline-block;
+    font-size: 14px;
+}
+
+#sidebar ul, #rightbar ul {
     list-style-type: none;
 }
 
-#sidebar ul li {
-    margin-bottom: 40px;
+#sidebar ul li, #rightbar ul li  {
+    margin-bottom: 20%;
 }
 
 a {
@@ -42,21 +50,20 @@ a {
 }
 
 .panel-link {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-right: 17%;
 }
 
 .activePanel {
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
+    border: solid black 2px;
 }
 
 .major-panel {
     width: 60%;
     display: inline-block;
     vertical-align: top;
-    margin-top: 14px;
+    margin-top: 1%;
 }
 
 #photos {
@@ -82,4 +89,9 @@ a {
     -webkit-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+}
+
+#my_search {
+    border: solid black 2px;
+    width: 70%;
 }
