@@ -1,11 +1,11 @@
 function buildPhotos() {
     var image_list;
-    $.getJSON("./images.json", function(data) {
+    $.getJSON("public/images.json", function(data) {
 	image_list = data;
 
 	for (image in image_list["images"]) {
 	    var tile = document.createElement("img");
-	    tile.setAttribute("src", image_list["images"][image]);
+	    tile.setAttribute("src", "images/" + image_list["images"][image]);
 	    tile.style.height = "50%";
 	    tile.style.width = "50%";
 	    
