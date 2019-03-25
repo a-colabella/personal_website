@@ -31,11 +31,11 @@ body {
     font-size: 14px;
 }
 
-#sidebar ul, #rightbar ul {
+#sidebar ul {
     list-style-type: none;
 }
 
-#sidebar ul li, #rightbar ul li  {
+#sidebar ul li {
     margin-bottom: 20%;
 }
 
@@ -43,10 +43,6 @@ a {
     text-decoration: none;
     color: black;
     cursor: pointer;
-}
-
-#rightbar .side-items {
-    padding-left: 10px;
 }
 
 .side-items li a:hover {
@@ -95,7 +91,3 @@ a {
     transition: .25s ease-in-out;
 }
 
-#my_search {
-    border: solid black 2px;
-    width: 70%;
-}

@@ -17,10 +17,6 @@ function buildPhotos() {
     });
 }
 
-function animateShorts() {
-
-}
-
 function animatePhotos() {
     var photos = $(".my-photos");
     var i = 0;
@@ -48,8 +44,7 @@ function panelGo(name) {
 	animatePhotos();
 	break;
     case "#shorts":
-	$("#rightbar").show();
-	animateShorts();
+
     default:
 	// do nothing, there is no default panel
     }
@@ -62,7 +57,6 @@ function panelGo(name) {
 function showPanel(name, element) {
     $(".panel-link").removeClass("activePanel");
     $(".major-panel").hide();
-    $("#rightbar").hide();
  
     $(name).fadeToggle(800, "swing");
 
@@ -77,7 +71,6 @@ function showFilter(name, element) {
     var current = $(".activePanel");
     console.log(current[1]);
     console.log(element[0]);
-    $(".filter-link").removeClass("activePanel");
 
     if (current[1] != element[0]) {
 	element.addClass("activePanel");
@@ -91,14 +84,8 @@ function showFilter(name, element) {
 $(document).ready(function() {
     showPanel("#home", $("#billboard"));
 
-    $("#rightbar").hide();
-    
     $(".panel-link").on("click", function() {
 	showPanel($(this).children("a").attr("href"), $(this));
-    });
-
-    $(".filter-link").on("click", function() {
-	showFilter($(this).children("a").attr("href"), $(this));
     });
 
     $("#billboard").on("click", function() {
