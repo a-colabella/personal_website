@@ -76,13 +76,22 @@ a {
     row-gap:           0px;
 }
 
-.my-photos {
-    width: 100% !important;
+#shorts {
+    -webkit-column-count: 2;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    2;
+    -moz-column-gap:      0px;
+    column-count:         2;
+    row-gap:           0px;
+}
+
+.my-photos, .my-writings {
+    width: 100% !important; 
     height: auto !important;
     cursor: pointer;
 }
 
-.my-photos:hover {
+.my-photos:hover, .my_writings:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);

@@ -1,9 +1,17 @@
+/**
+* This function retrieves a list of photos
+* from public/images.json, and builds photo
+* tiles for the #photos panel.
+*/
 function buildPhotos() {
     var image_list;
+
+    // Get images.json
     $.getJSON("public/images.json", function(data) {
 	image_list = data;
 
 	for (image in image_list["images"]) {
+	    // Create new photo tile for each image
 	    var tile = document.createElement("img");
 	    tile.setAttribute("src", "images/" + image_list["images"][image]);
 	    tile.style.height = "50%";
@@ -17,22 +25,74 @@ function buildPhotos() {
     });
 }
 
-function animatePhotos() {
-    var photos = $(".my-photos");
+/**
+* This function creates previews of
+* writings to show in the writing tiles.
+* This is done by simply taking the first 100 characters
+*/
+function getWriting(link) {
+    var data;
+    
+    $.ajax({
+	url: link,
+	data: data,
+	success: function(data) { return data },
+	dataType: "text"
+    });
+}
+
+
+/**
+* This function retrieves a list of writings
+* from public/writings.json, and builds photo
+* tiles for the #shorts panel.
+*/
+function buildWritings() {
+    var writings_list;
+    var content;
+
+    // Get images.json
+    $.getJSON("public/writings.json", function(data) {
+	writings_list = data;
+
+	for (writing in writings_list["writings"]) {
+	    // Create new tile for each writing
+	    content = getWriting("writings/" + writings_list["writings"][writing]);
+	    $("#shorts").append("<div>" + content.substring(0,100) + "</div>");
+	}
+	
+	$("#shorts div").addClass("my-writings");
+	$(".my-writings").hide();
+    });
+}
+
+/**
+* This function animates the photo tiles.
+* Photos will appear on the screen in a sequential
+* order filling two columns in the panel.
+*/
+function animateTiles(type) {
+    if (type == "photos") {
+	var tiles = $(".my-photos");
+    } else if (type == "writings") {
+	var tiles = $(".my-writings");
+    }
+    
     var i = 0;
     var id = setInterval(frame, 25);
     
-    photos.hide();
+    tiles.hide();
 
     function frame() {
-	if (i == photos.length) {
+	if (i == tiles.length) {
 	    clearInterval(id);
 	} else {
-	    $(photos[i]).fadeToggle(800, "swing");
+	    $(tiles[i]).fadeToggle(800, "swing");
 	    i++;
 	}
     }
 }
+
 
 /**
 * This function builds all components of the panel
@@ -41,10 +101,14 @@ function animatePhotos() {
 function panelGo(name) {
     switch(name) {
     case "#photos":
-	animatePhotos();
+	// reanimate photo tiles every time user
+	// opens panel
+	animateTiles("photos");
 	break;
     case "#shorts":
-
+	// reanimate writing tiles every time user
+	// opens panel
+	animateTiles("writings");
     default:
 	// do nothing, there is no default panel
     }
@@ -93,4 +157,5 @@ $(document).ready(function() {
     });
 
     buildPhotos();
+    buildWritings();
 });
