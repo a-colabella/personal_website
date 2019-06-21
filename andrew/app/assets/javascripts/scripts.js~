@@ -156,6 +156,6 @@ $(document).ready(function() {
 	showPanel($(this).attr("href"), $(this));
     });
 
-    buildPhotos();
-    buildWritings();
+    //buildPhotos();
+    //buildWritings();
 });
