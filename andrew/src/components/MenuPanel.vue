@@ -3,7 +3,7 @@
     <div id="name">
       ANDREW COLABELLA
     </div>
-    <ul class="side-items">
+    <ul>
       <li v-bind:id="op.id" v-for="op in options" v-on:click="activate = op.id"
       v-bind:class="{'activePanelLink': activate == op.id}">
         {{op.name}}
@@ -43,6 +43,7 @@ export default {
 #name {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 ul {

@@ -1,15 +1,20 @@
 <template>
   <div id="app">
     <MenuPanel v-bind:options="menu_items"/>
+    <BackgroundShuffle/>
   </div>
 </template>
 
 <script>
 import MenuPanel from './components/MenuPanel.vue'
+import BackgroundShuffle from './components/BackgroundShuffle.vue'
 
 export default {
   name: 'app',
-  components: { MenuPanel},
+  components: {
+    MenuPanel,
+    BackgroundShuffle
+  },
   data() {
     return {
       myView: "home",
