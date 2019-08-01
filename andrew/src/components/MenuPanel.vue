@@ -1,6 +1,6 @@
 <template>
   <div id="menu_panel">
-    <div id="name">
+    <div id="name" v-on:click="activate = 'name'">
       ANDREW COLABELLA
     </div>
     <ul>
@@ -44,6 +44,7 @@ export default {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 ul {
