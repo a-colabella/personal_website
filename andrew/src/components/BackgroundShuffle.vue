@@ -15,7 +15,7 @@ export default {
     position: absolute;
     z-index: 2;
     color: black;
-    font-size: 30px;
+    font-size: 20px;
     border: dashed black 2px;
     padding: 5px;
     cursor: pointer;

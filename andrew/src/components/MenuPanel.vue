@@ -1,10 +1,10 @@
 <template>
   <div id="menu_panel">
-    <div id="name" v-on:click="activate = 'name'">
+    <div id="name" v-on:click="activateAndGo('home')">
       ANDREW COLABELLA
     </div>
     <ul>
-      <li v-bind:id="op.id" v-for="op in options" v-on:click="activate = op.id"
+      <li v-bind:id="op.id" v-for="op in options" v-on:click="activateAndGo(op.id)"
       v-bind:class="{'activePanelLink': activate == op.id}">
         {{op.name}}
       </li>
@@ -21,7 +21,12 @@ export default {
       activate: true
     }
   },
-  methods: {}
+  methods: {
+    activateAndGo(id) {
+      this.activate = id;
+      this.$emit('menu-click', id);
+    }
+  }
 }
 </script>
 
@@ -30,8 +35,8 @@ export default {
 #menu_panel {
     background-color: black;
     position: sticky;
+    display: inline-block;
     z-index: 1;
-    color: white;
     width: 23%;
     margin-left: 6%;
     margin-top: 8%;
@@ -64,6 +69,7 @@ ul li:hover {
 
 .activePanelLink {
     border: solid white 2px;
+    font-weight: bold;
 }
 
 </style>
