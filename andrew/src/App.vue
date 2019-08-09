@@ -3,6 +3,9 @@
     <MenuPanel v-bind:options="menu_items" v-on:menu-click="menuClick"/>
     <BackgroundShuffle/>
     <AboutPanel v-if="myView === 'about'"/>
+    <PhotoPanel v-if="myView === 'photos'"/>
+    <StoryPanel v-if="myView === 'shorts'"/>
+    <ResumePanel v-if="myView === 'resume'"/>
   </div>
 </template>
 
@@ -10,13 +13,19 @@
 import MenuPanel from './components/MenuPanel.vue'
 import BackgroundShuffle from './components/BackgroundShuffle.vue'
 import AboutPanel from './components/AboutPanel.vue'
+import PhotoPanel from './components/PhotoPanel.vue'
+import StoryPanel from './components/StoryPanel.vue'
+import ResumePanel from './components/ResumePanel.vue'
 
 export default {
   name: 'app',
   components: {
     MenuPanel,
     BackgroundShuffle,
-    AboutPanel
+    AboutPanel,
+    PhotoPanel,
+    StoryPanel,
+    ResumePanel
   },
   data() {
     return {
