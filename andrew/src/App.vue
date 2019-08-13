@@ -32,19 +32,19 @@ export default {
       myView: "home",
       menu_items: [
         {
-          name: "ABOUT",
+          name: "about",
           id: "about"
         },
         {
-          name: "SHORT STORIES",
+          name: "stories",
           id: "shorts"
         },
         {
-          name: "PHOTOS",
+          name: "photos",
           id: "photos"
         },
         {
-          name: "RESUME",
+          name: "resume",
           id: "resume"
         }]
     }

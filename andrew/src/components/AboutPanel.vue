@@ -1,8 +1,10 @@
 <template>
   <div id="about_panel">
-    <p>ABOUT ME</p>
-    <p>Testas;fljaf;iiawjeran;clkasndjf;iaoewhf;aiocpasd</p>
-    <p>a;aaidfljk;sifj;awefioasdcbaofiwepc</p>
+    <h2><b>about</b></h2>
+    <p>Hi. I'm Andrew Colabella.</p>
+    <p>I'm studying Computer Engineering/Computer Science at Northeastern University.</p>
+    <p>I write. I'm obsessed with music. And sometimes I take good photos.</p>
+    <p>Enjoy my website!</p>
   </div>
 </template>
 

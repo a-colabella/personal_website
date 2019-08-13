@@ -1,7 +1,7 @@
 <template>
   <div id="menu_panel">
     <div id="name" v-on:click="activateAndGo('home')">
-      ANDREW COLABELLA
+      andrew colabella
     </div>
     <ul>
       <li v-bind:id="op.id" v-for="op in options" v-on:click="activateAndGo(op.id)"
