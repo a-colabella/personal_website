@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <MenuPanel v-bind:options="menu_items" v-on:menu-click="menuClick"/>
-    <BackgroundShuffle/>
-    <AboutPanel v-if="myView === 'about'"/>
-    <PhotoPanel v-if="myView === 'photos'"/>
-    <StoryPanel v-if="myView === 'shorts'"/>
-    <ResumePanel v-if="myView === 'resume'"/>
+    <img :src="require('./assets/images/'+backgroundURL)"/>
+    <MenuPanel class="menu" v-bind:options="menu_items" v-on:menu-click="menuClick"/>
+    <BackgroundShuffle v-on:shuffleMe="shuffleBackground()"/>
+    <AboutPanel class="content" v-if="myView === 'about'"/>
+    <PhotoPanel class="content" v-if="myView === 'photos'"/>
+    <StoryPanel class="content" v-if="myView === 'shorts'"/>
+    <ResumePanel class="content" v-if="myView === 'resume'"/>
   </div>
 </template>
 
@@ -30,6 +31,8 @@ export default {
   data() {
     return {
       myView: "home",
+      backgrounds: [],
+      backgroundURL: "huntington.jpg",
       menu_items: [
         {
           name: "about",
@@ -55,7 +58,17 @@ export default {
     },
     goHome: function() {
       this.myView = "home";
+    },
+    shuffleBackground: function() {
+      var index = Math.floor(Math.random() * (this.backgrounds.length - 1));
+
+      this.backgroundURL = this.backgrounds[index];
     }
+  },
+  mounted() {
+    var url = require('./assets/background.json');
+    this.backgrounds = url['backgrounds'];
+    this.shuffleBackground();
   }
 }
 </script>
@@ -66,5 +79,16 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
+}
+
+img {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.content {
+  z-index: 2;
 }
 </style>

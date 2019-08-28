@@ -34,9 +34,9 @@ export default {
 <style scoped>
 #menu_panel {
     background-color: black;
-    position: sticky;
+    position: fixed;
     display: inline-block;
-    z-index: 1;
+    z-index: 2;
     width: 23%;
     margin-left: 6%;
     margin-top: 8%;

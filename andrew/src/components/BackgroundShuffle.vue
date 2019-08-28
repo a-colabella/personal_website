@@ -1,5 +1,5 @@
 <template>
-  <i class="glyphicon glyphicon-refresh"></i>
+  <i class="glyphicon glyphicon-refresh" @click="$emit('shuffleMe')"></i>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   i {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     color: black;
     font-size: 20px;
