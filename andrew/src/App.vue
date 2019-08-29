@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <img :src="require('./assets/images/'+backgroundURL)"/>
+    <img class="bg_img" :src="require('./assets/images/'+backgroundURL)"/>
     <MenuPanel class="menu" v-bind:options="menu_items" v-on:menu-click="menuClick"/>
     <BackgroundShuffle v-on:shuffleMe="shuffleBackground()"/>
     <AboutPanel class="content" v-if="myView === 'about'"/>
-    <PhotoPanel class="content" v-if="myView === 'photos'"/>
+    <PhotoPanel class="content" v-bind:pics="photos" v-if="myView === 'photos'"/>
     <StoryPanel class="content" v-if="myView === 'shorts'"/>
     <ResumePanel class="content" v-if="myView === 'resume'"/>
   </div>
@@ -32,7 +32,8 @@ export default {
     return {
       myView: "home",
       backgrounds: [],
-      backgroundURL: "huntington.jpg",
+      photos: [],
+      backgroundURL: "brick.jpg",
       menu_items: [
         {
           name: "about",
@@ -66,8 +67,10 @@ export default {
     }
   },
   mounted() {
-    var url = require('./assets/background.json');
-    this.backgrounds = url['backgrounds'];
+    var background_url = require('./assets/background.json');
+    var photo_url = require('./assets/photos.json');
+    this.backgrounds = background_url['backgrounds'];
+    this.photos = photo_url['photos'];
     this.shuffleBackground();
   }
 }
@@ -81,7 +84,7 @@ export default {
   color: white;
 }
 
-img {
+.bg_img {
   display: block;
   position: absolute;
   z-index: 1;
