@@ -5,7 +5,7 @@
     <BackgroundShuffle v-on:shuffleMe="shuffleBackground()"/>
     <AboutPanel class="content" v-if="myView === 'about'"/>
     <PhotoPanel class="content" v-bind:pics="photos" v-if="myView === 'photos'"/>
-    <StoryPanel class="content" v-if="myView === 'shorts'"/>
+    <StoryPanel class="content" v-bind:stories="stories" v-if="myView === 'shorts'"/>
     <ResumePanel class="content" v-if="myView === 'resume'"/>
   </div>
 </template>
@@ -33,7 +33,8 @@ export default {
       myView: "home",
       backgrounds: [],
       photos: [],
-      backgroundURL: "brick.jpg",
+      stories: [],
+      backgroundURL: "republicadominicana.jpg",
       menu_items: [
         {
           name: "about",
@@ -69,9 +70,11 @@ export default {
   mounted() {
     var background_url = require('./assets/background.json');
     var photo_url = require('./assets/photos.json');
+    var stories_url = require('./assets/stories.json');
     this.backgrounds = background_url['backgrounds'];
     this.photos = photo_url['photos'];
-    this.shuffleBackground();
+    this.stories = stories_url['stories'];
+    //this.shuffleBackground();
   }
 }
 </script>

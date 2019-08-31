@@ -1,14 +1,20 @@
 <template>
   <div id="story_panel">
-    <p>STORIES</p>
-    <p>Testas;fljaf;iiawjeran;clkasndjf;iaoewhf;aiocpasd</p>
-    <p>a;aaidfljk;sifj;awefioasdcbaofiwepc</p>
+    <p class="page_h"><b>stories</b></p>
+    <div id="story_grid">
+      <p class="titles" v-for="story in stories">
+        <a>
+          {{story.substring(0,story.length - 4)}}
+        </a>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'StoryPanel'
+  name: 'StoryPanel',
+  props: ["stories"]
 }
 </script>
 
@@ -26,4 +32,12 @@ export default {
   padding-top: 10px;
 }
 
+.page_h {
+  font-size: 20px;
+}
+
+a {
+  cursor: pointer;
+  color: white;
+}
 </style>

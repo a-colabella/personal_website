@@ -2,7 +2,7 @@
   <div id="photo_panel">
     <p class="page_h"><b>photos</b></p>
     <div id="photo_grid">
-      <img v-for="pic in pics" :src="require('../assets/images/'+pic)" />
+      <img v-for="pic in pics" :src="require('../assets/images/'+pic)"/>
     </div>
   </div>
 </template>
@@ -38,11 +38,11 @@ export default {
 #photo_grid {
   line-height: 0;
   -webkit-column-count: 3;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    3;
-  -moz-column-gap:      0px;
-  column-count:         3;
-  column-gap:           0px;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
 }
 
 
