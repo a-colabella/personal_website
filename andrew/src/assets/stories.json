@@ -1,9 +1,25 @@
 {
   "stories":
   [
-    "hamburgers.txt",
-    "heaven.txt",
-    "lucky.txt",
-    "laloma.txt"
+    {
+      "id": 0,
+      "title": "hamburgers",
+      "text": "awtaefasdf."
+    },
+    {
+      "id": 1,
+      "title": "heaven",
+      "text": "qwerqwerqwer."
+    },
+    {
+      "id": 2,
+      "title": "lucky",
+      "text": "pourtypoekt."
+    },
+    {
+      "id": 3,
+      "title": "la loma",
+      "text": "asdf asd asdf."
+    }
   ]
 }
