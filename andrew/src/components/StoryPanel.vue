@@ -49,10 +49,12 @@ export default {
   display: inline-block;
   background-color: black;
   width: 50%;
+  height: 60%;
   margin-left: 35%;
   margin-top: 8%;
   padding-left: 10px;
   padding-top: 10px;
+  overflow-y: scroll;
 }
 
 .page_h {
