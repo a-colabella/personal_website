@@ -1,6 +1,7 @@
 <template>
   <div id="story_panel" v-if="panel === true">
-    <p class="page_h">stories</p>
+    <p class="page_h">
+      <span v-on:click="$emit('menu-click', 'home')">&#8592;</span> stories</p>
     <div id="story_grid">
       <p class="story-links" v-for="story in stories">
         <a @click="readStory(story['id'])">
@@ -10,7 +11,8 @@
     </div>
   </div>
   <div id="selected_story" v-else-if="panel === false">
-    <p class="page_h" id="storytitle">{{ storytitle }}</p>
+    <p class="page_h" id="storytitle">
+      <span v-on:click="storyMenu">&#8592;</span> {{ storytitle }}</p>
     <p id="storytext">{{ storytext }}</p>
   </div>
 </template>
@@ -31,11 +33,12 @@ export default {
       this.panel = false;
 
       let x = this.stories[file];
-      console.log(x);
-      console.log(x["title"]);
-      console.log(x["text"]);
       this.storytitle = x["title"];
       this.storytext = x["text"];
+    },
+
+    storyMenu: function() {
+      this.panel = true;
     }
   }
 }
@@ -48,9 +51,9 @@ export default {
   position: fixed;
   display: inline-block;
   background-color: black;
-  width: 50%;
+  width: 88%;
   height: 60%;
-  margin-left: 35%;
+  margin-left: 6%;
   margin-top: 8%;
   padding-left: 10px;
   padding-top: 10px;
@@ -62,7 +65,7 @@ export default {
   font-weight: bold;
 }
 
-a {
+a, span {
   cursor: pointer;
   color: white;
 }

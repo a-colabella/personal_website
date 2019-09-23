@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <img class="bg_img" :src="require('./assets/images/'+backgroundURL)"/>
-    <MenuPanel class="menu" v-bind:options="menu_items" v-on:menu-click="menuClick"/>
+    <MenuPanel class="menu" v-if="myView === 'home'" v-bind:options="menu_items" v-on:menu-click="menuClick"/>
     <BackgroundShuffle v-on:shuffleMe="shuffleBackground()"/>
-    <AboutPanel class="content" v-if="myView === 'about'"/>
-    <PhotoPanel class="content" v-bind:pics="photos" v-if="myView === 'photos'"/>
-    <StoryPanel class="content" v-bind:stories="stories" v-if="myView === 'shorts'"/>
-    <ResumePanel class="content" v-if="myView === 'resume'"/>
+    <AboutPanel class="content" v-if="myView === 'about'" v-on:menu-click="menuClick"/>
+    <PhotoPanel class="content" v-bind:pics="photos" v-if="myView === 'photos'" v-on:menu-click="menuClick"/>
+    <StoryPanel class="content" v-bind:stories="stories" v-if="myView === 'shorts'" v-on:menu-click="menuClick"/>
+    <ResumePanel class="content" v-if="myView === 'resume'" v-on:menu-click="menuClick"/>
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <div id="resume_panel">
-    <p class="page_h"><b>my resume</b></p>
+    <p class="page_h">
+      <span v-on:click="$emit('menu-click', 'home')">&#8592;</span> my resume</p>
     <h2>Education</h2>
     <p>Northeastern University, Boston MA, Class of 2020</p>
     <p>Bachelor of Science in Computer Engineering/Computer Science</p>
@@ -9,7 +10,7 @@
     <h3>Amazon Robotics</h3>
     <h3>Charles Stark Draper Laboratory</h3>
     <h2>Skills</h2>
-    
+
   </div>
 </template>
 
@@ -26,8 +27,8 @@ export default {
   position: fixed;
   display: inline-block;
   background-color: black;
-  width: 50%;
-  margin-left: 35%;
+  width: 88%;
+  margin-left: 6%;
   margin-top: 8%;
   padding-left: 10px;
   padding-top: 10px;
@@ -35,6 +36,11 @@ export default {
 
 .page_h {
   font-size: 20px;
+  font-weight: bold;
+}
+
+span {
+  cursor: pointer;
 }
 
 </style>

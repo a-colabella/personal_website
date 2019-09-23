@@ -1,6 +1,7 @@
 <template>
   <div id="photo_panel">
-    <p class="page_h"><b>photos</b></p>
+    <p class="page_h">
+      <span v-on:click="$emit('menu-click', 'home')">&#8592;</span> photos</p>
     <div id="photo_grid">
       <img v-for="pic in pics" :src="require('../assets/images/'+pic)"/>
     </div>
@@ -21,9 +22,9 @@ export default {
   position: fixed;
   display: inline-block;
   background-color: black;
-  width: 50%;
-  height: 60%;
-  margin-left: 35%;
+  width: 88%;
+  height: 65%;
+  margin-left: 6%;
   margin-top: 8%;
   padding-left: 10px;
   padding-right: 10px;
@@ -33,6 +34,7 @@ export default {
 
 .page_h {
   font-size: 20px;
+  font-weight: bold;
 }
 
 #photo_grid {
@@ -55,6 +57,10 @@ img {
 img:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+span {
+  cursor: pointer;
 }
 
 </style>
