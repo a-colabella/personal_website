@@ -1,5 +1,6 @@
-# personal_website
-Website Project:
+# Andrew Colabella
+## Personal Website
 
-A repo for my personal website
-and all the projects associated with it.
+A repository for the source code
+and markup of my personal website.
+
