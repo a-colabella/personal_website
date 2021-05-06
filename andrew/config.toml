@@ -1,9 +1,10 @@
-baseurl                  = "https://example.com"           # Your domain name
+baseurl                  = "https://andrewcolabella.com"           # Your domain name
 languageCode             = "en-us"
 defaultContentLanguage   = "en"
 isMultilingual           = false
 title                    = "andrew colabella"
-theme                    = "sam"
+author = "Andrew Colabella"
+theme                    = "tokiwa"
 pygmentsStyle            = "monokai"                        # https://help.farbox.com/pygments.html
 pygmentsCodefences       = true
 # googleAnalytics        = ""                               # Tracking code, eg. "UA-111111111-1"
@@ -11,31 +12,32 @@ pygmentsCodefences       = true
 [params]
     dateform             = "Mon Jan 02, 2006"
     dateformfull         = "Mon Jan 2 2006 15:04:05 EST"
-    favicon              = "sam.ico"
-    homepage             = "main"                           # What to call the home page link
+    favicon              = ""
+    homepage             = ""                           # What to call the home page link
     footerText           = ""
 
 # Metadata for Open Graph and Twitter
-    description          = "andrew colabella's site"               # Max 160 characters show in search results
+    description          = ""               # Max 160 characters show in search results
     images               = ["tn.png"]                       # Image that shows on Twitter cards and Open Graph links to the site
     title                = "andrew colabella"
     # rss                = ""
 
-[[params.mainMenu]]
-    link = "/about"
-    text = "andrew colabella"
+[menu]
+# Shown in the side menu.
+  [[menu.main]]
+    name = "AR"
+    url = "/ar/"
+    weight = 1
+  [[menu.main]]
+    name = "stories"
+    url = "/stories/"
+    weight = 2
+  [[menu.main]]
+    name = "photos"
+    url = "/photos/"
+    weight = 3
 
-[[params.mainMenu]]
-    link = "/stories"
-    text = "stories"
-
-[[params.mainMenu]]
-    link = "/photos"
-    text = "photos"
-
-[[params.mainMenu]]
-    link = "/portfolio"
-    text = "portfolio"
-
-[imaging]
-    quality = 75
+[social]
+instagram="http://example.com/"
+youtube="http://youtube.com/"
+github="http://github.com/"
